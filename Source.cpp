@@ -12,6 +12,7 @@ void menu() {
 	cout << "6 - Clear stack\n";
 	cout << "7 - Show last el in stack\n";
 	cout << "8 - show stack\n";
+	cout << "9 - fill arr\n";
 	cout << "Enter choice: ";
 }
 
@@ -33,17 +34,16 @@ int main() {
 		switch (choice)
 		{
 		case 1:
+
+
 			if (st1.isFull()) {
 				st1.addCapacity();
-				for (int i = st1.getTop(); i < st1.getCapacity(); i++) {
-					st1.push(rand() % 10 - 2 - 190);
-				}
+				st1.push(rand() % 10 - 2 - 190);
 			}
 			else {
-				while (!st1.isFull()) {
-					st1.push(rand() % 10 - 2 - 190);
-				}
+				st1.push(rand () % 10 - 2 - 190);
 			}
+			
 			
 			break;
 		case 2:
@@ -82,6 +82,19 @@ int main() {
 		case 8:
 			cout << st1 << " ";
 			cout << endl;
+			break;
+		case 9:
+			if (st1.isFull()) {
+				st1.addCapacity();
+				for (int i = st1.getTop(); i < st1.getCapacity(); i++) {
+					st1.push(rand() % 10 - 2 - 190);
+				}
+			}
+			else {
+				while (!st1.isFull()) {
+					st1.push(rand() % 10 - 2 - 190);
+				}
+			}
 			break;
 		default:
 			break;
